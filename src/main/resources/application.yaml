@@ -1,0 +1,26 @@
+spring:
+  sql:
+    init:
+      mode: always
+      data-locations:
+        - classpath:sql/teacher-data.sql
+        - classpath:sql/classes-data.sql
+        - classpath:sql/student-data.sql
+        - classpath:sql/classroom-data.sql
+        - classpath:sql/head_teacher-data.sql
+        - classpath:sql/school_week-data.sql
+        - classpath:sql/school_day-data.sql
+        - classpath:sql/lesson-data.sql
+        - classpath:sql/notification-data.sql
+  datasource:
+    url: jdbc:postgresql://localhost:5432/adymnar
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+    defer-datasource-initialization: true

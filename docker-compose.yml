@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=adymnar
+    ports:
+      - 5432:5432

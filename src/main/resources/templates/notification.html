@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Создание уведомления</title>
+</head>
+<body>
+<div class="div">
+    <div class="div-2">
+        <div class="div-3">
+            Введите текст уведомления
+            <br/>
+            <br/>
+        </div>
+        <div class="builder-canvas div-4">
+            <form th:object="${notification}" th:action="@{/api/v1/notification}" th:method="POST">
+                <textarea placeholder="" th:field="*{content}" name="notification" class="form-input"></textarea>
+                <button type="submit" class="button">Опубликовать</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    .div {
+        background: linear-gradient(
+                180deg,
+                rgba(29, 183, 16, 0.6) 42.98%,
+                rgba(102, 183, 50, 0.48) 100%
+        );
+        max-width: 1331px;
+        align-self: stretch;
+        width: 100%;
+        justify-content: center;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        margin-top: 25px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 30px;
+        padding: 50px 60px;
+    }
+
+    @media (max-width: 991px) {
+        .div {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .div-2 {
+        display: flex;
+        width: 886px;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 31px 0 39px;
+    }
+
+    .div-3 {
+        color: #fff;
+        white-space: nowrap;
+        text-align: center;
+        font: 700 60px Inter, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+        .div-3 {
+            font-size: 40px;
+            white-space: initial;
+        }
+    }
+
+    .div-4 {
+        border-radius: 30px;
+        background-color: #fff;
+        align-self: stretch;
+        display: flex;
+        margin-top: -4px;
+        flex-direction: row;
+        overflow: auto;
+        position: relative;
+        min-height: 495px;
+        padding: 0 81px 47px 80px;
+    }
+
+    @media (max-width: 991px) {
+        .div-4 {
+            max-width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    .form-input {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 54px;
+        left: 69px;
+        width: 756px;
+        height: 348px;
+        border-radius: 30px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 1);
+        text-align: left;
+        margin: 0 auto;
+        padding: 10px;
+        font: 400 30px "sans-serif", sans-serif;
+    }
+
+    .button {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 1);
+        top: 435px;
+        left: 295px;
+        width: 305px;
+        height: 68px;
+        appearance: none;
+        color: rgba(29, 183, 16, 1);
+        border-radius: 30px;
+        text-align: center;
+        cursor: pointer;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(29, 183, 16, 1);
+        padding: 15px 25px;
+        font: 40px "sans-serif", sans-serif;
+    }
+</style>
