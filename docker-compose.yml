@@ -7,3 +7,18 @@ services:
       - POSTGRES_DB=adymnar
     ports:
       - 5432:5432
+    networks:
+      - my-net
+  app:
+    image: app:latest
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - my-net
+networks:
+  my-net:
+    driver: bridge
